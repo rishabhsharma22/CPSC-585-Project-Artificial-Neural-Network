@@ -77,7 +77,7 @@ classifier.fit_generator(training_set,
                          validation_steps = 250)
 
 
-#classifier.save("Rishabh_model_1.h5",overwrite=True)
-#classifier.summary()
+classifier.save("Rishabh_model_1.h5",overwrite=True)
+classifier.summary()
 
 
