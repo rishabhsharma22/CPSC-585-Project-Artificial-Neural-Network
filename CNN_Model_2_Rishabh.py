@@ -80,4 +80,10 @@ classifier.fit_generator(training_set,
 classifier.save("Rishabh_model_1.h5",overwrite=True)
 classifier.summary()
 
+import numpy as np
+from keras.preprocessing import image
 
+img = image.load_img('C:/CSUF/CPSC585Project/ANN Project/CPSC-585-Project-Artificial-Neural-Network/dataset/Training_Data/Without_Water/AA-39.PNG',target_size=(64,64,3))
+img = np.expand_dims(img,axis = 0)
+result = classifier.predict(img)
+training_set.class_indices
