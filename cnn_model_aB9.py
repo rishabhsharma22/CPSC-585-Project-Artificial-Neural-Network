@@ -13,6 +13,7 @@ from keras import models, optimizers
 from keras import layers
 import pandas as pd
 from keras.preprocessing.image import ImageDataGenerator
+import numba
 
 # Directories
 dataset = 'dataset'
@@ -52,11 +53,11 @@ train_datagen = ImageDataGenerator(rescale=1./255, rotation_range=45, width_shif
 
 validation_datagen = ImageDataGenerator(rescale=1./255)
 
-train_generator = train_datagen.flow_from_directory(dataset_train, target_size=(150,150), batch_size=32, class_mode='binary')
+train_generator = train_datagen.flow_from_directory(dataset_train, target_size=(64,64), batch_size=32, class_mode='binary')
 
-validation_generator = validation_datagen.flow_from_directory(dataset_test, taget_size=(150,150), batch_size=32, class_mode='binary')
+validation_generator = validation_datagen.flow_from_directory(dataset_test, target_size=(64,64), batch_size=32, class_mode='binary')
 
 #Fitting the model
-model.fit_generator(train_generator, steps_per_epoch=100, epochs=5, validation_data=validation_generator, validation_steps=50)
+model.fit_generator(train_generator, steps_per_epoch=100, epochs=100,validation_data=validation_generator, validation_steps=50)
 
 model.save('cnn_model_aB9.h5')
