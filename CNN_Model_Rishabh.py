@@ -70,7 +70,7 @@ test_set = test_datagen.flow_from_directory('dataset\Test_Data',
                                             class_mode = 'binary')
 
 history = classifier.fit_generator(training_set,
-                         steps_per_epoch = 40,
+                         steps_per_epoch = 1000,
                          epochs = 1000,
                          validation_data = test_set,
                          validation_steps = 250)
