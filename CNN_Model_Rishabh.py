@@ -79,4 +79,3 @@ history = classifier.fit_generator(training_set,
 #classifier.save("Rishabh_model_1.h5",overwrite=True)
 #classifier.summary()
 
-
