@@ -70,11 +70,8 @@ test_set = test_datagen.flow_from_directory('dataset/Test_Data',
                                             class_mode = 'binary')
 
 history = classifier.fit_generator(training_set,
-<<<<<<< HEAD
                          steps_per_epoch = 40,
-=======
                          steps_per_epoch = 1000,
->>>>>>> 6adc28071490930a53d4bd95a00577628f9f0817
                          epochs = 5,
                          validation_data = test_set,
                          validation_steps = 250)
@@ -82,9 +79,3 @@ history = classifier.fit_generator(training_set,
 
 classifier.save("Rishabh_model_1.h5",overwrite=True)
 classifier.summary()
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 6adc28071490930a53d4bd95a00577628f9f0817
